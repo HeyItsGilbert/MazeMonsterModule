@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://heyitsgilbert.github.io/MazeRats/en-US/New-MazeMonster/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>New-MazeMonster - Maze Rats PowerShell Module</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "New-MazeMonster";
+    var mkdocs_page_input_path = "en-US/New-MazeMonster.md";
+    var mkdocs_page_url = "/MazeRats/en-US/New-MazeMonster/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Maze Rats PowerShell Module</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">en US</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Add-XP/">Add-XP</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Complete-AbilityBump/">Complete-AbilityBump</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Invoke-Spell/">Invoke-Spell</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-Dice/">New-Dice</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-DiceRoll/">New-DiceRoll</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">New-MazeMonster</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-ability">-Ability</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-armor">-Armor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-attackbonus">-AttackBonus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-dexterity">-Dexterity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-feature">-Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-health">-Health</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-monsterbase">-MonsterBase</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-strength">-Strength</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-trait">-Trait</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-will">-Will</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-MazeRat/">New-MazeRat</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-RatName/">New-RatName</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-Spell/">New-Spell</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../about_MazeRats.help/">MazeRats</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Maze Rats PowerShell Module</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>en US &raquo;</li>
+        
+      
+    
+    <li>New-MazeMonster</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/HeyItsGilbert/MazeRats/edit/master/docs/en-US/New-MazeMonster.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="new-mazemonster">New-MazeMonster</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Creates a new monster for your encounters.</p>
+<h2 id="syntax">SYNTAX</h2>
+<pre><code>New-MazeMonster [-Health] &lt;Health&gt; [-Armor] &lt;Armor&gt; [-AttackBonus] &lt;AttackBonus&gt; [-Strength] &lt;StrBonus&gt;
+ [-Dexterity] &lt;DexBonus&gt; [-Will] &lt;WilBonus&gt; [[-MonsterBase] &lt;MonsterBase&gt;] [[-Feature] &lt;String&gt;]
+ [[-Trait] &lt;String&gt;] [[-Ability] &lt;String&gt;] [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h2 id="description">DESCRIPTION</h2>
+<p>Randomly generates a monsters.</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<pre><code>New-MazeMonster
+</code></pre>
+
+<p>Returns a MazeMonster</p>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-ability">-Ability</h3>
+<p>Optional ability for your monster.</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-armor">-Armor</h3>
+<p>How heavily protected is your character?</p>
+<pre><code class="yaml">Type: Armor
+Parameter Sets: (All)
+Aliases:
+Accepted values: Unarmored, LightProtection, ModerateProtection, HeavyProtection, NighImpervious
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-attackbonus">-AttackBonus</h3>
+<p>How skilled is this character?</p>
+<pre><code class="yaml">Type: AttackBonus
+Parameter Sets: (All)
+Aliases:
+Accepted values: Untrained, Trained, Dangerous, Masterful, Lethal
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-dexterity">-Dexterity</h3>
+<p>How dexterous is this character?</p>
+<pre><code class="yaml">Type: DexBonus
+Parameter Sets: (All)
+Aliases:
+Accepted values: Slow, Average, Nimble, Swift, Blurred
+
+Required: True
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-feature">-Feature</h3>
+<p>What kind of feature does the monster have?</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-health">-Health</h3>
+<p>The type of health we want from this Monster.</p>
+<pre><code class="yaml">Type: Health
+Parameter Sets: (All)
+Aliases:
+Accepted values: Weak, Typical, Tough, Hulking, Colossal
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-monsterbase">-MonsterBase</h3>
+<p>Is this monster Aerial, Terrestrial, or Aquatic?</p>
+<pre><code class="yaml">Type: MonsterBase
+Parameter Sets: (All)
+Aliases:
+Accepted values: Aerial, Terrestrial, Aquatic
+
+Required: False
+Position: 6
+Default value: ([Enum]::GetValues([MonsterBase]) | Get-Random)
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-strength">-Strength</h3>
+<p>Weak, Average, Strong, Powerful, Monstrous</p>
+<pre><code class="yaml">Type: StrBonus
+Parameter Sets: (All)
+Aliases:
+Accepted values: Weak, Average, Strong, Powerful, Monstrous
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-trait">-Trait</h3>
+<p>What kind of trait does this monster have?</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-will">-Will</h3>
+<p>Dimwitted, Average, Clever, Brilliant, Genius</p>
+<pre><code class="yaml">Type: WilBonus
+Parameter Sets: (All)
+Aliases:
+Accepted values: Dimwitted, Average, Clever, Brilliant, Genius
+
+Required: True
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="commonparameters">CommonParameters</h3>
+<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
+<h2 id="inputs">INPUTS</h2>
+<h2 id="outputs">OUTPUTS</h2>
+<h2 id="notes">NOTES</h2>
+<h2 id="related-links">RELATED LINKS</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../New-MazeRat/" class="btn btn-neutral float-right" title="New-MazeRat">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../New-DiceRoll/" class="btn btn-neutral" title="New-DiceRoll"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/HeyItsGilbert/MazeRats/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../New-DiceRoll/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../New-MazeRat/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
